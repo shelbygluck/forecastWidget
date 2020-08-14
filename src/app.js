@@ -31,6 +31,16 @@ if (navigator.geolocation) {
            const cityRes = await axios.get(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`)
            city = cityRes.data.city.toUpperCase()
            document.getElementById('title').innerHTML = `WEATHER FORECAST FOR ${city}`
+
+           //grab container
+           const weatherBoxContainer = document.getElementById('weatherBoxContainer')
+           //adjust html to reflect filled data in category arrays
+           for (let i = 0; i < icon.length; i++) {
+               const newWeatherBox = document.createElement("div")
+               newWeatherBox.className = 'weatherBox'
+               newWeatherBox.innerHTML = `${icon[i]} ${summary[i]} ${high[i]} / ${low[i]}`
+               weatherBoxContainer.appendChild(newWeatherBox)
+           }
         } catch(err) {
             console.log(err)
         }
@@ -40,3 +50,4 @@ if (navigator.geolocation) {
     // geolocation is not supported
     console.log('geolocation not available')
   }
+

@@ -1,0 +1,22 @@
+#mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+#weatherBoxContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.weatherBox {
+    display: flex;
+    margin-right: 10px;
+    margin-right: 10px;
+    background-color: gray;
+}
